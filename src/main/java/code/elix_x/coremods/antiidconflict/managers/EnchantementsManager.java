@@ -14,7 +14,7 @@ public class EnchantementsManager {
 	
 	public static boolean translate = false;
 	
-	public static String avaibleIDs = "";
+	public static String availableIDs = "";
 	public static String occupiedIDs = "";
 	public static String conflictedIDs = "";
 	
@@ -52,19 +52,19 @@ public class EnchantementsManager {
 				if(e != null){
 					occupiedIDs += i + " : " + e.getName() + " (" + e.getClass().getName() + ")\n";
 				} else {
-					avaibleIDs += i + "\n";
+					availableIDs += i + "\n";
 				}
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.enchantementsFolder, "\\avaibleIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.enchantementsFolder, "\\availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
 			freeIds.createNewFile();
 			PrintWriter writer = new PrintWriter(freeIds);
-			writer.println("List of avaible enchantement ids:");
-			for(String s : avaibleIDs.split("\n")){
+			writer.println("List of available enchantement ids:");
+			for(String s : availableIDs.split("\n")){
 				writer.println(s);
 			}
 			writer.close();
@@ -91,7 +91,7 @@ public class EnchantementsManager {
 				if(e != null){
 					writer.println(i + " is Occupied by: " + e.getName() + " (" + e.getClass().getName() + ")");
 				} else {
-					writer.println(i + " is Avaible");
+					writer.println(i + " is Available");
 				}
 			}
 

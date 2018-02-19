@@ -96,7 +96,7 @@ public class PotionsManager {
 		}
 
 		{
-			File freeIds = new File(AntiIdConflictBase.potionsFolder, "\\avaibleIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.potionsFolder, "\\availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -157,7 +157,7 @@ public class PotionsManager {
 						} else if(Potion.potionTypes[i] != null){
 							writer.println(i + " is Occupied by " + Potion.potionTypes[i].getName() + " (" + Potion.potionTypes[i].getClass().getName() + ")");
 						} else {
-							writer.println(i + " is Avaible");
+							writer.println(i + " is Available");
 						}
 					} catch(Exception e){
 						if(debug){

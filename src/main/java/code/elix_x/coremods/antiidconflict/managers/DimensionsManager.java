@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.ReflectionHelper;
 
 public class DimensionsManager {
 	
-	public static String avaibleIDs = "";
+	public static String availableIDs = "";
 	public static String occupiedIDs = "";
 	public static String conflictedIDs = "";
 	
@@ -72,19 +72,19 @@ public class DimensionsManager {
 						occupiedIDs += i + " : " + (name == null ? "" : name + ", ") + "Provider: (id: " + DimensionManager.getProviderType(i) + ", class: " + clas + ")" + "\n";
 					}
 				} else {
-					avaibleIDs += i + "\n";
+					availableIDs += i + "\n";
 				}
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.dimensionsFolder, "\\avaibleIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.dimensionsFolder, "\\availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
 			freeIds.createNewFile();
 			PrintWriter writer = new PrintWriter(freeIds);
-			writer.println("List of avaible dimension ids:");
-			for(String s : avaibleIDs.split("\n")){
+			writer.println("List of available dimension ids:");
+			for(String s : availableIDs.split("\n")){
 				writer.println(s);
 			}
 			writer.close();
@@ -125,7 +125,7 @@ public class DimensionsManager {
 						writer.println(i + " is Occupied by: " + (name == null ? "" : name + ", ") + "Provider: (id: " + DimensionManager.getProviderType(i) + ", class: " + clas + ")");
 					}
 				} else {
-					writer.println(i + " is Avaible");
+					writer.println(i + " is Available");
 				}
 			}
 

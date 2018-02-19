@@ -18,7 +18,7 @@ public class EntitiesManager {
 
 	public static int idToCheckUntil = 2048;
 	
-	public static String avaibleIDs = "";
+	public static String availableIDs = "";
 	public static String occupiedIDs = "";
 	public static String conflictedIDs = "";
 	
@@ -56,19 +56,19 @@ public class EntitiesManager {
 				if(clas != null){
 					occupiedIDs += i + " : " + EntityList.getStringFromID(i) + " (" + clas.getName() + ")\n";
 				} else {
-					avaibleIDs += i + "\n";
+					availableIDs += i + "\n";
 				}
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.entitiesFolder, "\\avaibleIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.entitiesFolder, "\\availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
 			freeIds.createNewFile();
 			PrintWriter writer = new PrintWriter(freeIds);
-			writer.println("List of avaible entities ids:");
-			for(String s : avaibleIDs.split("\n")){
+			writer.println("List of available entities ids:");
+			for(String s : availableIDs.split("\n")){
 				writer.println(s);
 			}
 			writer.close();
@@ -95,7 +95,7 @@ public class EntitiesManager {
 				if(clas != null){
 					writer.println(i + " is Occupied by " + EntityList.getStringFromID(i) + "(" + clas.getName() + ")");
 				} else {
-					writer.println(i + " is Avaible");
+					writer.println(i + " is Available");
 				}
 			}
 

@@ -101,7 +101,7 @@ public class BiomesManager {
 		System.out.println("Found tottally " + IconflictedIds + " conflicted biome ids");
 
 		{
-			File freeIds = new File(AntiIdConflictBase.biomesFolder, "\\avaibleIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.biomesFolder, "\\availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -156,7 +156,7 @@ public class BiomesManager {
 				} else if(BiomeGenBase.getBiomeGenArray()[i] != null){
 					writer.println(i + " is Occupied by " + BiomeGenBase.getBiomeGenArray()[i].biomeName + " (" + BiomeGenBase.getBiomeGenArray()[i].getBiomeClass().getName() + ")");
 				} else {
-					writer.println(i + " is Avaible");
+					writer.println(i + " is Available");
 				}
 			}
 
