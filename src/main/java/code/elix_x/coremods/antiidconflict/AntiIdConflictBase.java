@@ -26,7 +26,7 @@ public class AntiIdConflictBase {
 	@EventHandler
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		mainFolder = new File(event.getModConfigurationDirectory().getPath() + "\\AntiIDConflict");
+		mainFolder = new File(event.getModConfigurationDirectory().getPath() + "/AntiIDConflict");
 		mainFolder.mkdir();
 
 		BiomesManager.preinit(event);

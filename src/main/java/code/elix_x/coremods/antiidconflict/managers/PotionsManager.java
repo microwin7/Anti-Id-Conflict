@@ -34,7 +34,7 @@ public class PotionsManager {
 
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		AntiIdConflictBase.potionsFolder = new File(AntiIdConflictBase.mainFolder, "\\potions");
+		AntiIdConflictBase.potionsFolder = new File(AntiIdConflictBase.mainFolder, "/potions");
 		AntiIdConflictBase.potionsFolder.mkdir();
 
 		setUpPotionFolder();
@@ -54,7 +54,7 @@ public class PotionsManager {
 
 	public static void setUpPotionFolder() throws Exception{
 		{
-			File conf = new File(AntiIdConflictBase.potionsFolder,"\\main.cfg");	
+			File conf = new File(AntiIdConflictBase.potionsFolder,"/main.cfg");	
 			conf.createNewFile();
 			Configuration config = new Configuration(conf);
 			config.load();
@@ -96,7 +96,7 @@ public class PotionsManager {
 		}
 
 		{
-			File freeIds = new File(AntiIdConflictBase.potionsFolder, "\\availableIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.potionsFolder, "/availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -112,7 +112,7 @@ public class PotionsManager {
 		{
 			int i = occupiedIds;
 
-			File occupiedIds = new File(AntiIdConflictBase.potionsFolder, "\\occupiedIDs.txt");
+			File occupiedIds = new File(AntiIdConflictBase.potionsFolder, "/occupiedIDs.txt");
 			if(occupiedIds.exists()){
 				occupiedIds.delete();
 			}
@@ -127,7 +127,7 @@ public class PotionsManager {
 			writer.close();
 		}
 		{
-			File file = new File(AntiIdConflictBase.potionsFolder, "\\conflictedIDs.txt");
+			File file = new File(AntiIdConflictBase.potionsFolder, "/conflictedIDs.txt");
 			if(file.exists()){
 				file.delete();
 			}
@@ -143,7 +143,7 @@ public class PotionsManager {
 		{
 			int j = occupiedIds;
 
-			File all = new File(AntiIdConflictBase.potionsFolder, "\\AllIDs.txt");
+			File all = new File(AntiIdConflictBase.potionsFolder, "/AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 			writer.println("Total amount of free potion ids: " + freeIds);
 			writer.println("Total amount of occupied potion ids: " + j);

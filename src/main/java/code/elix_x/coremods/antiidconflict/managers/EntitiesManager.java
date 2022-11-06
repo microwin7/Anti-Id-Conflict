@@ -24,7 +24,7 @@ public class EntitiesManager {
 	
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		AntiIdConflictBase.entitiesFolder = new File(AntiIdConflictBase.mainFolder, "\\entities");
+		AntiIdConflictBase.entitiesFolder = new File(AntiIdConflictBase.mainFolder, "/entities");
 		AntiIdConflictBase.entitiesFolder.mkdir();
 		
 		setUpEntitiesFolder();
@@ -41,7 +41,7 @@ public class EntitiesManager {
 	}
 	
 	public static void setUpEntitiesFolder() throws Exception {
-		File conf = new File(AntiIdConflictBase.entitiesFolder, "\\main.cfg");
+		File conf = new File(AntiIdConflictBase.entitiesFolder, "/main.cfg");
 		conf.createNewFile();
 		Configuration config = new Configuration(conf);
 		config.load();
@@ -61,7 +61,7 @@ public class EntitiesManager {
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.entitiesFolder, "\\availableIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.entitiesFolder, "/availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -74,7 +74,7 @@ public class EntitiesManager {
 			writer.close();
 		}
 		{
-			File occupiedIds = new File(AntiIdConflictBase.entitiesFolder, "\\occupiedIDs.txt");
+			File occupiedIds = new File(AntiIdConflictBase.entitiesFolder, "/occupiedIDs.txt");
 			if(occupiedIds.exists()){
 				occupiedIds.delete();
 			}
@@ -87,7 +87,7 @@ public class EntitiesManager {
 			writer.close();
 		}
 		{
-			File all = new File(AntiIdConflictBase.entitiesFolder, "\\AllIDs.txt");
+			File all = new File(AntiIdConflictBase.entitiesFolder, "/AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 
 			for(int i = 0; i < idToCheckUntil + 1; i++){

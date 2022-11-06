@@ -26,7 +26,7 @@ public class DimensionsManager {
 	
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		AntiIdConflictBase.dimensionsFolder = new File(AntiIdConflictBase.mainFolder, "\\dimensions");
+		AntiIdConflictBase.dimensionsFolder = new File(AntiIdConflictBase.mainFolder, "/dimensions");
 		AntiIdConflictBase.dimensionsFolder.mkdir();
 		
 		setUpDimensionsFolder();
@@ -43,7 +43,7 @@ public class DimensionsManager {
 	}
 	
 	public static void setUpDimensionsFolder() throws Exception {
-		File conf = new File(AntiIdConflictBase.dimensionsFolder, "\\main.cfg");
+		File conf = new File(AntiIdConflictBase.dimensionsFolder, "/main.cfg");
 		conf.createNewFile();
 		Configuration config = new Configuration(conf);
 		config.load();
@@ -77,7 +77,7 @@ public class DimensionsManager {
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.dimensionsFolder, "\\availableIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.dimensionsFolder, "/availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -90,7 +90,7 @@ public class DimensionsManager {
 			writer.close();
 		}
 		{
-			File occupiedIds = new File(AntiIdConflictBase.dimensionsFolder, "\\occupiedIDs.txt");
+			File occupiedIds = new File(AntiIdConflictBase.dimensionsFolder, "/occupiedIDs.txt");
 			if(occupiedIds.exists()){
 				occupiedIds.delete();
 			}
@@ -103,7 +103,7 @@ public class DimensionsManager {
 			writer.close();
 		}
 		{
-			File all = new File(AntiIdConflictBase.dimensionsFolder, "\\AllIDs.txt");
+			File all = new File(AntiIdConflictBase.dimensionsFolder, "/AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 
 			Hashtable<Integer, Class<? extends WorldProvider>> providers = ReflectionHelper.getPrivateValue(DimensionManager.class, null, "providers");

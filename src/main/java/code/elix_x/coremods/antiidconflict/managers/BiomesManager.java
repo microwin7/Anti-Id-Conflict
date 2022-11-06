@@ -35,7 +35,7 @@ public class BiomesManager {
 
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		AntiIdConflictBase.biomesFolder = new File(AntiIdConflictBase.mainFolder, "\\biomes");
+		AntiIdConflictBase.biomesFolder = new File(AntiIdConflictBase.mainFolder, "/biomes");
 		AntiIdConflictBase.biomesFolder.mkdir();
 
 		setUpBiomesFolder();
@@ -55,7 +55,7 @@ public class BiomesManager {
 
 	public static void setUpBiomesFolder() throws Exception{
 		{
-			File conf = new File(AntiIdConflictBase.biomesFolder,"\\main.cfg");	
+			File conf = new File(AntiIdConflictBase.biomesFolder,"/main.cfg");	
 			conf.createNewFile();
 			Configuration config = new Configuration(conf);
 			config.load();
@@ -101,7 +101,7 @@ public class BiomesManager {
 		System.out.println("Found tottally " + IconflictedIds + " conflicted biome ids");
 
 		{
-			File freeIds = new File(AntiIdConflictBase.biomesFolder, "\\availableIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.biomesFolder, "/availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -115,7 +115,7 @@ public class BiomesManager {
 			writer.close();
 		}
 		{
-			File occupiedIds = new File(AntiIdConflictBase.biomesFolder, "\\occupiedIDs.txt");
+			File occupiedIds = new File(AntiIdConflictBase.biomesFolder, "/occupiedIDs.txt");
 			if(occupiedIds.exists()){
 				occupiedIds.delete();
 			}
@@ -130,7 +130,7 @@ public class BiomesManager {
 			writer.close();
 		}
 		{
-			File file = new File(AntiIdConflictBase.biomesFolder, "\\conflictedIDs.txt");
+			File file = new File(AntiIdConflictBase.biomesFolder, "/conflictedIDs.txt");
 			if(file.exists()){
 				file.delete();
 			}
@@ -144,7 +144,7 @@ public class BiomesManager {
 			writer.close();
 		}
 		{
-			File all = new File(AntiIdConflictBase.biomesFolder, "\\AllIDs.txt");
+			File all = new File(AntiIdConflictBase.biomesFolder, "/AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 			writer.println("Total amount of free biome ids: " + freeIds);
 			writer.println("Total amount of occupied biome ids: " + BiomesManager.occupiedIds);

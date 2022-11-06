@@ -20,7 +20,7 @@ public class EnchantementsManager {
 	
 	public static void preinit(FMLPreInitializationEvent event) throws Exception
 	{ 
-		AntiIdConflictBase.enchantementsFolder = new File(AntiIdConflictBase.mainFolder, "\\enchantements");
+		AntiIdConflictBase.enchantementsFolder = new File(AntiIdConflictBase.mainFolder, "/enchantements");
 		AntiIdConflictBase.enchantementsFolder.mkdir();
 		
 		setUpEnchantementsFolder();
@@ -37,7 +37,7 @@ public class EnchantementsManager {
 	}
 	
 	public static void setUpEnchantementsFolder() throws Exception {
-		File conf = new File(AntiIdConflictBase.enchantementsFolder, "\\main.cfg");
+		File conf = new File(AntiIdConflictBase.enchantementsFolder, "/main.cfg");
 		conf.createNewFile();
 		Configuration config = new Configuration(conf);
 		config.load();
@@ -57,7 +57,7 @@ public class EnchantementsManager {
 			}
 		}
 		{
-			File freeIds = new File(AntiIdConflictBase.enchantementsFolder, "\\availableIDs.txt");
+			File freeIds = new File(AntiIdConflictBase.enchantementsFolder, "/availableIDs.txt");
 			if(freeIds.exists()){
 				freeIds.delete();
 			}
@@ -70,7 +70,7 @@ public class EnchantementsManager {
 			writer.close();
 		}
 		{
-			File occupiedIds = new File(AntiIdConflictBase.enchantementsFolder, "\\occupiedIDs.txt");
+			File occupiedIds = new File(AntiIdConflictBase.enchantementsFolder, "/occupiedIDs.txt");
 			if(occupiedIds.exists()){
 				occupiedIds.delete();
 			}
@@ -83,7 +83,7 @@ public class EnchantementsManager {
 			writer.close();
 		}
 		{
-			File all = new File(AntiIdConflictBase.enchantementsFolder, "\\AllIDs.txt");
+			File all = new File(AntiIdConflictBase.enchantementsFolder, "/AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 
 			for(int i = 0; i < Enchantment.enchantmentsList.length; i++){
